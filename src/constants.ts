@@ -166,6 +166,7 @@ export const FOOTER_LINKS: FooterSection[] = [
       // { label: "Visit Us", href: "/visit-us" },
       { label: "Financing", href: "/financing" },
       { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms & Conditions", href: "/terms" },
     ],
   },
   {

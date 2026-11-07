@@ -1,118 +1,84 @@
-import Layout from '../Layout';
-import { SITE_NAME } from '../constants';
+import LegalDocument, { type LegalSection } from '../components/LegalDocument';
 
-const PrivacyPolicyPage = () => {
-    return (
-        <Layout title="Privacy Policy">
-            <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-                <div className="mx-auto max-w-3xl">
-                    <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                        Privacy Policy
-                    </h1>
-                    <p className="mt-6 text-lg leading-8 text-gray-600">
-                        Last updated: October, 16 2024
-                    </p>
-                    <section className="mt-12 space-y-10 text-base leading-7 text-gray-600">
-                        <div>
-                            <h2 className="text-xl font-semibold text-gray-900">1. Introduction</h2>
-                            <p className="mt-4">
-                                {SITE_NAME} ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (the "Site") or interact with our services.
-                            </p>
-                        </div>
-                        <div>
-                            <h2 className="text-xl font-semibold text-gray-900">2. Information We Collect</h2>
-                            <p className="mt-4">
-                                We collect information in two ways:
-                            </p>
-                            <div className="mt-4 space-y-4">
-                                <div>
-                                    <h3 className="text-lg font-semibold text-gray-900">2.1 Information You Provide to Us</h3>
-                                    <p className="mt-2">
-                                        We collect information that you voluntarily provide to us when you fill out forms on our Site. This may include:
-                                    </p>
-                                    <ul className="mt-3 list-disc space-y-1 pl-6 text-gray-600">
-                                        <li>Name</li>
-                                        <li>Email address</li>
-                                        <li>Phone number</li>
-                                        <li>Address</li>
-                                        <li>Any other information you choose to provide</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h3 className="text-lg font-semibold text-gray-900">2.2 Information We Collect Automatically</h3>
-                                    <p className="mt-2">
-                                        When you visit our Site, we automatically collect certain information about your device and usage of the Site. We use Google Analytics to help us understand how our customers use the Site. The information collected through Google Analytics includes:
-                                    </p>
-                                    <ul className="mt-3 list-disc space-y-1 pl-6 text-gray-600">
-                                        <li>IP address</li>
-                                        <li>Browser type</li>
-                                        <li>Device type</li>
-                                        <li>Operating system</li>
-                                        <li>Pages viewed</li>
-                                        <li>Time spent on pages</li>
-                                        <li>Referring website</li>
-                                        <li>Geographic location (country and city level)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <h2 className="text-xl font-semibold text-gray-900">3. How We Use Your Information</h2>
-                            <p className="mt-4">
-                                We use the information we collect to:
-                            </p>
-                            <ul className="mt-3 list-disc space-y-1 pl-6 text-gray-600">
-                                <li>Respond to your inquiries and fulfill your requests</li>
-                                <li>Improve our Site and services</li>
-                                <li>Analyze usage patterns and trends</li>
-                                <li>Send you marketing communications (with your consent)</li>
-                                <li>Protect against fraudulent or illegal activity</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h2 className="text-xl font-semibold text-gray-900">4. Sharing of Your Information</h2>
-                            <p className="mt-4">
-                                We do not sell or rent your personal information to third parties. We may share your information with:
-                            </p>
-                            <ul className="mt-3 list-disc space-y-1 pl-6 text-gray-600">
-                                <li>Service providers who assist us in operating our business (e.g., website hosting, data analysis)</li>
-                                <li>Law enforcement or other governmental entities when required by law</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h2 className="text-xl font-semibold text-gray-900">5. Your Rights and Choices</h2>
-                            <p className="mt-4">
-                                You have the right to:
-                            </p>
-                            <ul className="mt-3 list-disc space-y-1 pl-6 text-gray-600">
-                                <li>Access, correct, or delete your personal information</li>
-                                <li>Opt-out of marketing communications</li>
-                                <li>Disable cookies through your browser settings</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h2 className="text-xl font-semibold text-gray-900">6. Data Security</h2>
-                            <p className="mt-4">
-                                We implement reasonable security measures to protect your personal information. However, no method of transmission over the Internet or electronic storage is 100% secure.
-                            </p>
-                        </div>
-                        <div>
-                            <h2 className="text-xl font-semibold text-gray-900">7. Changes to This Privacy Policy</h2>
-                            <p className="mt-4">
-                                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
-                            </p>
-                        </div>
-                        <div>
-                            <h2 className="text-xl font-semibold text-gray-900">8. Contact Us</h2>
-                            <p className="mt-4">
-                                If you have any questions about this Privacy Policy, please contact us at our contact page.
-                            </p>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </Layout>
-    );
-};
+const b = (t: string) => <strong className="font-semibold text-gray-900">{t}</strong>;
+
+const sections: LegalSection[] = [
+    {
+        title: 'Information We Collect',
+        intro: 'We collect information you provide to us directly, including:',
+        bullets: [
+            'Name, billing address, and delivery address',
+            'Mobile phone number and email address',
+            'Order, purchase, financing, and delivery details',
+            'Messages and communications you send to us',
+        ],
+        outro: 'When you visit our websites, we may also automatically collect basic technical information such as your browser type, device type, and pages visited.',
+    },
+    {
+        title: 'How We Use Your Information',
+        intro: 'We use your information to:',
+        bullets: [
+            'Process and fulfill your orders',
+            'Schedule and complete deliveries, including sending delivery time windows',
+            'Provide customer service and respond to your questions',
+            'Send text messages you have agreed to receive',
+            'Operate, maintain, and improve our stores, websites, and services',
+            'Comply with legal obligations',
+        ],
+    },
+    {
+        title: 'SMS / Text Messaging',
+        intro: 'If you opt in to receive text messages by checking the SMS consent box on your sales order, Mattress Rx and the store you purchased from will use your mobile number to send order updates, delivery scheduling and time window notifications, and customer service messages, including two-way conversations with our staff.',
+        bullets: [
+            'Message frequency varies.',
+            'Message and data rates may apply.',
+            'Reply STOP at any time to opt out. You will receive one final message confirming you have been unsubscribed.',
+            'Reply HELP for help, or call us at (480) 705-0700.',
+            'Consent to receive text messages is not a condition of purchase.',
+        ],
+        outro: <>{b('We do not sell or share your SMS opt-in data or personal information with third parties for marketing purposes.')} Mobile phone numbers and SMS consent collected for text messaging will not be shared with any third parties or affiliates for marketing or promotional purposes.</>,
+    },
+    {
+        title: 'How We Share Information',
+        intro: 'We do not sell your personal information. We share information only as needed to run our business, including with:',
+        bullets: [
+            <>{b('Service providers')} who perform services on our behalf, such as our software and messaging platform provider, delivery partners, payment processors, and financing providers. These providers may only use your information to perform services for Mattress Rx.</>,
+            <>{b('Legal and safety purposes')}, when required by law or to protect the rights, property, or safety of Mattress Rx, our customers, or others.</>,
+        ],
+        outro: 'The SMS opt-in restriction above applies to all sharing: text messaging opt-in data and consent are never shared with third parties for marketing purposes.',
+    },
+    {
+        title: 'Data Retention',
+        intro: 'We keep your information for as long as needed to complete your order, provide service and warranty support, maintain records of consent, and meet legal and accounting requirements.',
+    },
+    {
+        title: 'Data Security',
+        intro: 'We use reasonable administrative, technical, and physical safeguards to protect your information from unauthorized access, loss, or misuse. No method of transmission or storage is completely secure, but we work to protect your information.',
+    },
+    {
+        title: 'Your Choices',
+        bullets: [
+            <>{b('Text messages:')} Reply STOP to any message to opt out.</>,
+            <>{b('Access, correction, or deletion:')} Contact us using the details below to request access to, correction of, or deletion of your personal information, subject to legal record-keeping requirements.</>,
+        ],
+    },
+    {
+        title: "Children's Privacy",
+        intro: 'Our services are not directed to children under 13, and we do not knowingly collect personal information from children under 13.',
+    },
+    {
+        title: 'Changes to This Policy',
+        intro: 'We may update this Privacy Policy from time to time. Changes take effect when posted on this page, and the "Last updated" date above will be revised.',
+    },
+];
+
+const PrivacyPolicyPage = () => (
+    <LegalDocument
+        title="Privacy Policy"
+        updated="November 5, 2026"
+        intro={'This Privacy Policy describes how Mattress Rx and its store locations operating as Mattress Center USA, Mattress Magic, Mattress 2 Go, Copa Mattress, and Curly\'s Discount Mattress ("Mattress Rx," "we," "us," or "our") collect, use, and protect your personal information when you shop with us in store, visit our websites, or communicate with us, including by text message.'}
+        sections={sections}
+    />
+);
 
 export default PrivacyPolicyPage;

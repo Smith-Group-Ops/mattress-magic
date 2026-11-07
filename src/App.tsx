@@ -8,6 +8,7 @@ import ProductDetailPage from './pages/ProductDetailPage';
 import FinancingPage from './pages/FinancingPage';
 import ShopFurniturePage from './pages/ShopFurniturePage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsPage from './pages/TermsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { initGoogleAds, attachClickTracking } from './lib/googleAds';
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/products/:slug" element={<ProductDetailPage />} />
             <Route path="/financing" element={<FinancingPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFoundPage />} />
             {/* Add more routes here as they are created */}
